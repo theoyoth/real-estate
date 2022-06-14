@@ -53,6 +53,37 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
   return (
     <Box>
       <Landing />
+      <Banner
+        purpose="BUY A HOME"
+        title1="Buy Homes for"
+        title2="Everyone"
+        desc1=" Explore from Apartments, builder floors, villas"
+        desc2="and more"
+        buttonText="Explore Sale"
+        linkName="/search?purpose=for-sale"
+        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/173096160/253f2431365643238ce0236883ab58d2"
+      />
+      <Flex flexWrap="wrap" mt={6}>
+        {propertiesForSale.map((property) => (
+          <Property property={property} key={property.id} />
+        ))}
+      </Flex>
+      <Box borderBottom="2px" borderColor="gray.200"></Box>
+      <Banner
+        purpose="RENT A HOME"
+        title1="Rental Homes for"
+        title2="Everyone"
+        desc1=" Explore from Apartments, builder floors, villas"
+        desc2="and more"
+        buttonText="Explore Renting"
+        linkName="/search?purpose=for-rent"
+        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/170244921/9d92c8a8263f4c52a9adeebbb67ab9aa"
+      />
+      <Flex flexWrap="wrap" mt={6}>
+        {propertiesForRent.map((property) => (
+          <Property property={property} key={property.id} />
+        ))}
+      </Flex>
     </Box>
   );
 }
